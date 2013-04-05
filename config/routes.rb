@@ -1,4 +1,12 @@
 Mchammer::Application.routes.draw do
+
+  # get "home/index"
+
+  # get "home/new"
+
+  # get "home/show"
+
+  resources :home
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
