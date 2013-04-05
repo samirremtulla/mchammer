@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container{
-	border: 1px solid black;
-	margin-left: 100px;
+.control_pad{
+/*	border: 1px solid black;
+*/	margin-left: 100px;
 	width:400px;
+	float:left;
+
 
 }
 
@@ -29,4 +31,15 @@
 
 h1{
 	text-align: center;
+}
+
+.slider {
+/*	border: 1px solid black;
+*/	width:100px;
+	float:left;
+	margin-left:50px;
+}
+
+#amount{
+	width:75px;
 }

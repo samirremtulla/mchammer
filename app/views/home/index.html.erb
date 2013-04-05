@@ -1,6 +1,31 @@
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "#slider-vertical" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 60,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+  });
+  </script>
+</head>
+
+<body>
+
 <h1>mcHammer Bot</h1>
 
-<div class = "container">
+<div class = "control_pad">
 	<div class = "btn btn-success"> Forward </div>
 	<br/>
 	<div class = "btn btn-info"> Left </div>
@@ -11,3 +36,16 @@
 	<div class = "btn btn-inverse left"> Strafe Left </div>
 	<div class = "btn btn-inverse"> Strafe Right </div>
 </div>
+
+	<div class = "slider">
+	<p>
+		  <label for="amount">VROOM</label>
+		  <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+		</p>
+		 
+		<div id="slider-vertical" style="height: 200px;"></div>
+	</div>
+ 
+</body>
+
+
