@@ -18,35 +18,51 @@
 $(function(){
 	$(".btn-success").on("click", function() {
 		console.log("Forward");
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {forward: 1}, dataType: "jsonp"});
+		var val = $("#amount").val();
+		console.log(val);
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {forward: val/100}, dataType: "jsonp"});
 	}); 
 
 	$(".btn-danger").on("click", function() {
 		console.log("Reverse");
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {forward: -1}, dataType: "jsonp"});
+		var val = $("#amount").val();
+		console.log(val);
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {forward: -val/100}, dataType: "jsonp"});
 	}); 
 
 	$(".btn-info").on("click", function() {
 		console.log("Left");
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {turn: -1}, dataType: "jsonp"});
-		
+		var val = $("#amount").val();
+		console.log(val);
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {turn: -val/100}, dataType: "jsonp"});
 	}); 
 
 	$(".btn-warning").on("click", function() {
 		console.log("right");
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {turn: 1}, dataType: "jsonp"});
+		var val = $("#amount").val();
+		console.log(val);
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {turn: val/100}, dataType: "jsonp"});
 		//ajax
 	});
 
 	$(".left").on("click", function() {
 		console.log("SL");
+		var val = $("#amount").val();
+		console.log(val);
 		//ajax
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {strafe: -1}, dataType: "jsonp"});
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {strafe: -val/100}, dataType: "jsonp"});
 	});
 
 	$(".right").on("click", function() {
 		console.log("SR");
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {strafe: 1}, dataType: "jsonp"});
+		var val = $("#amount").val();
+		console.log(val);
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {strafe: val/100}, dataType: "jsonp"});
+		//ajax
+	});
+	$(".btn-primary").on("click", function() {
+		console.log("STOP");
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {strafe: 0}, dataType: "jsonp"});
 		//ajax
 	});
 
